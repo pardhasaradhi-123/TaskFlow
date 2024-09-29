@@ -13,12 +13,13 @@ mongoDbConnection.connect();
 // CORS Middleware
 app.use(cors({
   origin: 'https://task-flow-9xhd.vercel.app', // Your frontend origin
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true, // If you're using cookies or auth headers
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Ensure OPTIONS is allowed
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow headers you use in your requests
+  credentials: true, // Allow credentials (cookies, auth headers, etc.)
 }));
 
-// Handle preflight requests
-app.options('*', cors());
+// Handle preflight requests (OPTIONS)
+app.options('*', cors()); // Handle all preflight requests
 
 // Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
