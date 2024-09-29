@@ -10,6 +10,10 @@ const PORT = process.env.PORT || 5000; // Fallback to port 5000 if PORT isn't de
 // Connect to MongoDB
 mongoDbConnection.connect();
 
+
+// Handle preflight requests
+app.options('*', cors());
+
 // CORS Middleware
 app.use(cors({
   origin: 'https://task-flow-9xhd.vercel.app', // Your frontend origin
@@ -17,8 +21,6 @@ app.use(cors({
   credentials: true, // If you're using cookies or auth headers
 }));
 
-// Handle preflight requests
-app.options('*', cors());
 
 // Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
