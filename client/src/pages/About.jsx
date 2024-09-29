@@ -37,7 +37,7 @@ const About = () => {
     <>
       <div>
         <Navbar />
-        <div className="mt-[100px] h-screen max-sm:h-auto p-5 bg-gradient-to-b from-gray-100 to-indigo-200">
+        <div className="mt-[100px] h-screen max-sm:h-auto p-5">
           <div className="flex flex-col justify-center items-center">
             <LuListTodo size={75} color="indigo" />
             <p className="text-center p-4 text-lg">
