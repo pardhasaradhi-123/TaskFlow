@@ -82,10 +82,8 @@ const Authentication = () => {
         const res = await fetch(
           `${
             isLogIn
-              ? `${import.meta.env.REACT_APP_SERVER_BASEURL}/api/v1/auth/sign`
-              : `${
-                  import.meta.env.REACT_APP_SERVER_BASEURL
-                }/api/v1/auth/register`
+              ? `${process.env.REACT_APP_SERVER_BASEURL}/api/v1/auth/sign`
+              : `${process.env.REACT_APP_SERVER_BASEURL}/api/v1/auth/register`
           }`,
           {
             method: "POST",

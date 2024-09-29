@@ -2214,7 +2214,7 @@
                       type: "loadAnimation",
                       path: e,
                       fullPath:
-                        import.meta.env.REACT_APP_SERVER_BASEURL +
+                        process.env.REACT_APP_SERVER_BASEURL +
                         window.location.pathname,
                       id: a,
                     });
@@ -2226,7 +2226,7 @@
                       type: "loadData",
                       path: e,
                       fullPath:
-                        import.meta.env.REACT_APP_SERVER_BASEURL +
+                        process.env.REACT_APP_SERVER_BASEURL +
                         window.location.pathname,
                       id: a,
                     });
@@ -30554,12 +30554,8 @@
                             const t = await fetch(
                               "" +
                                 (e
-                                  ? `${
-                                      import.meta.env.REACT_APP_SERVER_BASEURL
-                                    }/api/v1/auth/sign`
-                                  : `${
-                                      import.meta.env.REACT_APP_SERVER_BASEURL
-                                    }/api/v1/auth/register`),
+                                  ? `${process.env.REACT_APP_SERVER_BASEURL}/api/v1/auth/sign`
+                                  : `${process.env.REACT_APP_SERVER_BASEURL}/api/v1/auth/register`),
                               {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
@@ -30746,9 +30742,7 @@
           (async () => {
             try {
               const e = await fetch(
-                `${
-                  import.meta.env.REACT_APP_SERVER_BASEURL
-                }/api/v1/auth/myProfile`,
+                `${process.env.REACT_APP_SERVER_BASEURL}/api/v1/auth/myProfile`,
                 { method: "GET", headers: { "x-token": l } }
               );
               if (e.ok) {
@@ -30804,9 +30798,7 @@
                       (async () => {
                         try {
                           const t = await fetch(
-                            `${
-                              import.meta.env.REACT_APP_SERVER_BASEURL
-                            }/api/v1/task/addTask`,
+                            `${process.env.REACT_APP_SERVER_BASEURL}/api/v1/task/addTask`,
                             {
                               method: "POST",
                               headers: { "Content-Type": "application/json" },
@@ -30897,9 +30889,7 @@
           l = async () => {
             try {
               const e = await fetch(
-                `${
-                  import.meta.env.REACT_APP_SERVER_BASEURL
-                }/api/v1/task/getTasks/${n._id}`,
+                `${process.env.REACT_APP_SERVER_BASEURL}/api/v1/task/getTasks/${n._id}`,
                 { method: "GET", headers: { "x-token": o } }
               );
               if (e.ok) {
@@ -30915,9 +30905,7 @@
             (async () => {
               try {
                 const e = await fetch(
-                  `${
-                    import.meta.env.REACT_APP_SERVER_BASEURL
-                  }/api/v1/auth/myProfile`,
+                  `${process.env.REACT_APP_SERVER_BASEURL}/api/v1/auth/myProfile`,
                   { method: "GET", headers: { "x-token": o } }
                 );
                 if (e.ok) {
