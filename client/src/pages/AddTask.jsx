@@ -12,7 +12,7 @@ const AddTask = ({ isClose, setIsClose }) => {
   const fetchMyProfileData = async () => {
     try {
       const res = await fetch(
-        `${window.location.origin}/api/v1/auth/myProfile`,
+        `${import.meta.env.REACT_APP_SERVER_BASEURL}/api/v1/auth/myProfile`,
         {
           method: "GET",
           headers: { "x-token": jwtToken },
@@ -51,7 +51,7 @@ const AddTask = ({ isClose, setIsClose }) => {
       const addTask = async () => {
         try {
           const res = await fetch(
-            `${window.location.origin}/api/v1/task/addTask`,
+            `${import.meta.env.REACT_APP_SERVER_BASEURL}/api/v1/task/addTask`,
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },

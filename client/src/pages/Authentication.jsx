@@ -82,8 +82,10 @@ const Authentication = () => {
         const res = await fetch(
           `${
             isLogIn
-              ? `${window.location.origin}/api/v1/auth/sign`
-              : `${window.location.origin}/api/v1/auth/register`
+              ? `${import.meta.env.REACT_APP_SERVER_BASEURL}/api/v1/auth/sign`
+              : `${
+                  import.meta.env.REACT_APP_SERVER_BASEURL
+                }/api/v1/auth/register`
           }`,
           {
             method: "POST",

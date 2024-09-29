@@ -19,7 +19,7 @@ const ToDoData = () => {
   const fetchMyProfileData = async () => {
     try {
       const res = await fetch(
-        `${window.location.origin}/api/v1/auth/myProfile`,
+        `${import.meta.env.REACT_APP_SERVER_BASEURL}/api/v1/auth/myProfile`,
         {
           method: "GET",
           headers: { "x-token": jwtToken },
@@ -39,7 +39,9 @@ const ToDoData = () => {
   const fetchListData = async () => {
     try {
       const res = await fetch(
-        `${window.location.origin}/api/v1/task/getTasks/${myProfile._id}`,
+        `${import.meta.env.REACT_APP_SERVER_BASEURL}/api/v1/task/getTasks/${
+          myProfile._id
+        }`,
         {
           method: "GET",
           headers: { "x-token": jwtToken },
@@ -59,7 +61,9 @@ const ToDoData = () => {
   const handleDelete = async (id) => {
     try {
       const res = await fetch(
-        `${window.location.origin}/api/v1/task/deleteTask/${id}`,
+        `${
+          import.meta.env.REACT_APP_SERVER_BASEURL
+        }/api/v1/task/deleteTask/${id}`,
         {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
