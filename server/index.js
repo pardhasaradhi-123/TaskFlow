@@ -12,7 +12,7 @@ mongoDbConnection.connect();
 
 // CORS Middleware
 app.use(cors({
-  origin: process.env.APPLICATION_URL, // Your frontend origin
+  origin: "https://task-flow-client.vercel.app/*", // Your frontend origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Ensure OPTIONS is allowed
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow headers you use in your requests
   credentials: true, // Allow credentials (cookies, auth headers, etc.)
