@@ -12,7 +12,7 @@ mongoDbConnection.connect();
 
 // CORS Middleware with specific origin
 const corsOptions = {
-  origin: 'https://task-flow-client.vercel.app', // Allow only your client
+  origin: process.env.APPLICATION_URL, // Allow only your client
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
 };
