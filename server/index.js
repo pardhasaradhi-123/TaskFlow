@@ -13,8 +13,6 @@ mongoDbConnection.connect();
 // CORS Middleware
 app.use(cors());
 
-// Handle preflight requests (OPTIONS)
-app.options('*', cors()); // Respond to all preflight OPTIONS requests
 
 // Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
