@@ -1,5 +1,5 @@
 const userModel = require("../model/user");
-const bcrypt = require("bcrypt");
+const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const getMyProfile = async (req, res) => {
@@ -19,7 +19,7 @@ const getMyProfile = async (req, res) => {
 const saveUsers = async (req, res) => {
   try {
     const plainPassword = req.body.password;
-    const hashedPassword = bcrypt.hashSync(plainPassword, 10);
+    const hashedPassword = bcryptjs.hashSync(plainPassword, 10);
 
     const existingUser = await userModel.findOne({ email: req.body.email });
 
@@ -46,7 +46,7 @@ const sigInUser = async (req, res) => {
     if (!user) {
       res.status(400).send("Please Sign Up first !");
     } else {
-      const correctPassword = bcrypt.compareSync(
+      const correctPassword = bcryptjs.compareSync(
         req.body.password,
         user.password
       );

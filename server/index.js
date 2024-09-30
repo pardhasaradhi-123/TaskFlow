@@ -11,12 +11,7 @@ const PORT = process.env.PORT || 5000; // Fallback to port 5000 if PORT isn't de
 mongoDbConnection.connect();
 
 // CORS Middleware
-app.use(cors({
-  origin: process.env.APPLICATION_URL, // Your frontend origin
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Ensure OPTIONS is allowed
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow headers you use in your requests
-  credentials: true, // Allow credentials (cookies, auth headers, etc.)
-}));
+app.use(cors());
 
 // Handle preflight requests (OPTIONS)
 app.options('*', cors()); // Respond to all preflight OPTIONS requests
