@@ -28,10 +28,7 @@ app.use("/api/v1/auth", users);
 app.use("/api/v1/task", list);
 
 app.use(function (req, res, next) {
-  res.header(
-    "Access-Control-Allow-Orgin",
-    process.env.APPLICATION_URL || "https://task-flow-client.vercel.app"
-  );
+  res.header("Access-Control-Allow-Orgin", "http://localhost:4200");
   res.header(
     "Access-Control-Allow-Header",
     "Orgin,X-Request-With, Content-Type, Accept"
