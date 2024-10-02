@@ -19,6 +19,14 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+// Middleware for parsing JSON and URL-encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.use("/api/v1/auth", users);
+app.use("/api/v1/task", list);
+
 app.use(function (req, res, next) {
   res.header(
     "Access-Control-Allow-Orgin",
@@ -33,14 +41,6 @@ app.use(function (req, res, next) {
   res.header("Expires", 0);
   next();
 });
-
-// Middleware for parsing JSON and URL-encoded data
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Routes
-app.use("/api/v1/auth", users);
-app.use("/api/v1/task", list);
 
 // Start server
 app.listen(PORT, () => {
