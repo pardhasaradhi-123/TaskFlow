@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000; // Fallback to port 5000 if PORT isn't de
 mongoDbConnection.connect();
 
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Orgin", "http://localhost:4200");
+  res.header("Access-Control-Allow-Orgin", process.env.APPLICATION_URL);
   res.header(
     "Access-Control-Allow-Header",
     "Orgin,X-Request-With, Content-Type, Accept"
